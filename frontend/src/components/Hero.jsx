@@ -31,7 +31,7 @@ const Hero = ({ data }) => {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black/50 z-10"></div>
         <img 
-          src={data.personal.heroBackground} 
+          src={data.personal.hero_background} 
           alt="Hero Background" 
           className="w-full h-full object-cover"
         />
