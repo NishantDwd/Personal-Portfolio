@@ -5,7 +5,7 @@ from datetime import datetime
 router = APIRouter()
 
 # Get database connection
-from ..server import db
+from server import db
 
 @router.post("/init-portfolio")
 async def initialize_portfolio():
