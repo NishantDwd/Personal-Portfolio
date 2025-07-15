@@ -26,28 +26,28 @@ const TechStack = ({ data }) => {
     {
       title: "Languages",
       icon: Code,
-      items: data.techStack.languages,
+      items: data.tech_stack.languages,
       color: "from-blue-500 to-cyan-500",
       bgColor: "bg-blue-50"
     },
     {
       title: "Frameworks & Libraries",
       icon: Layers,
-      items: data.techStack.frameworks,
+      items: data.tech_stack.frameworks,
       color: "from-purple-500 to-pink-500",
       bgColor: "bg-purple-50"
     },
     {
       title: "Tools & Technologies",
       icon: Settings,
-      items: data.techStack.tools,
+      items: data.tech_stack.tools,
       color: "from-green-500 to-emerald-500",
       bgColor: "bg-green-50"
     },
     {
       title: "Databases",
       icon: Database,
-      items: data.techStack.databases,
+      items: data.tech_stack.databases,
       color: "from-orange-500 to-red-500",
       bgColor: "bg-orange-50"
     }
