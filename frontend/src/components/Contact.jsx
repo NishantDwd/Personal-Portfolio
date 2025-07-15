@@ -5,6 +5,10 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { useToast } from '../hooks/use-toast';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 const Contact = ({ data }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,6 +17,7 @@ const Contact = ({ data }) => {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -31,14 +36,27 @@ const Contact = ({ data }) => {
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Mock form submission
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. I'll get back to you soon!",
-    });
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+
+    try {
+      await axios.post(`${API}/contact`, formData);
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your message. I'll get back to you soon!",
+      });
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -47,6 +65,8 @@ const Contact = ({ data }) => {
       [e.target.name]: e.target.value
     });
   };
+
+  if (!data) return null;
 
   const contactMethods = [
     {
