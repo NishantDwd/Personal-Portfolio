@@ -49,7 +49,7 @@ const Hero = ({ data }) => {
         <div className="mb-8 relative">
           <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white/20 shadow-2xl backdrop-blur-sm">
             <img 
-              src={data.personal.profileImage} 
+              src={data.personal.profile_image} 
               alt={data.personal.name}
               className="w-full h-full object-cover"
             />
