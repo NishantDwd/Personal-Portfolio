@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Depends
+from fastapi import APIRouter, HTTPException
 from typing import List
 from datetime import datetime
 from models.portfolio import (
@@ -11,8 +11,12 @@ import os
 
 router = APIRouter()
 
-# Get database connection
-from server import db
+# Database connection will be injected
+db = None
+
+def init_db(database):
+    global db
+    db = database
 
 @router.get("/portfolio", response_model=Portfolio)
 async def get_portfolio():
