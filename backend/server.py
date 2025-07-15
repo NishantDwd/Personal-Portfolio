@@ -8,7 +8,7 @@ from pathlib import Path
 from datetime import datetime
 
 # Import routes
-from .routes import portfolio, init_data
+from routes import portfolio, init_data
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
