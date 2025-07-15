@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from ..models.portfolio import Portfolio, PersonalInfo, TechStack, Project, Education, Contact
+from models.portfolio import Portfolio, PersonalInfo, TechStack, Project, Education, Contact
 from datetime import datetime
 
 router = APIRouter()
