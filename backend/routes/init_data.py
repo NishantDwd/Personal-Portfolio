@@ -4,8 +4,12 @@ from datetime import datetime
 
 router = APIRouter()
 
-# Get database connection
-from server import db
+# Database connection will be injected
+db = None
+
+def init_db(database):
+    global db
+    db = database
 
 @router.post("/init-portfolio")
 async def initialize_portfolio():
