@@ -12,7 +12,7 @@ import os
 router = APIRouter()
 
 # Get database connection
-from ..server import db
+from server import db
 
 @router.get("/portfolio", response_model=Portfolio)
 async def get_portfolio():
