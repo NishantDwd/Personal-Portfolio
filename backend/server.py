@@ -7,9 +7,6 @@ import logging
 from pathlib import Path
 from datetime import datetime
 
-# Import routes
-from routes import portfolio, init_data
-
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
@@ -23,6 +20,13 @@ app = FastAPI(title="Nishant Portfolio API", version="1.0.0")
 
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
+
+# Import routes after database is initialized
+from routes import portfolio, init_data
+
+# Initialize database connections in route modules
+portfolio.init_db(db)
+init_data.init_db(db)
 
 # Add your routes to the router
 @api_router.get("/")
