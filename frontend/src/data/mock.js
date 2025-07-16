@@ -5,7 +5,7 @@ export const portfolioData = {
     title: "Full Stack Developer",
     location: "India",
     bio: "I'm a passionate full-stack developer skilled in building scalable web applications using React, Node.js, MongoDB, Express.js, TailwindCSS, and more. I architect efficient backend systems, design intuitive UIs, and optimize performance for real-world impact. With hands-on experience in web development, AI, and RESTful APIs, I thrive on turning complex problems into clean, maintainable code. Tech isn't just my job—it's my playground.",
-    profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+    profileImage: "/profile photo.jpeg",
     heroBackground: "https://images.pexels.com/photos/5475750/pexels-photo-5475750.jpeg"
   },
   

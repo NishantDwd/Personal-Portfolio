@@ -29,7 +29,7 @@ async def initialize_portfolio():
             "title": "Full Stack Developer",
             "location": "India",
             "bio": "I'm a passionate full-stack developer skilled in building scalable web applications using React, Node.js, MongoDB, Express.js, TailwindCSS, and more. I architect efficient backend systems, design intuitive UIs, and optimize performance for real-world impact. With hands-on experience in web development, AI, and RESTful APIs, I thrive on turning complex problems into clean, maintainable code. Tech isn't just my job—it's my playground.",
-            "profile_image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+            "profile_image": "/profile photo.jpeg",
             "hero_background": "https://images.pexels.com/photos/5475750/pexels-photo-5475750.jpeg"
         },
         "tech_stack": {
